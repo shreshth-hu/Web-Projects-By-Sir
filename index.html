@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Website</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #e5e5e5;
+    }
+
+    #Container {
+      background-color: #eee;
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 65px;
+    }
+
+    .my {
+      color: #1c20e3;
+      margin-top: 1.5%;
+      margin-left: 3%;
+      font-weight: 700;
+      font-size: 1.5rem;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+    }
+
+    .my:hover {
+      transition: 1.2s ease;
+      transform: rotate(-3.2deg);
+      color: #db5010;
+    }
+
+    .links {
+      position: relative;
+      display: flex;
+      gap: 1.7rem;
+      left: 65%;
+      margin-top: 1.5%;
+    }
+
+    .a_s {
+      color: rgb(97, 96, 97);
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .a_s:hover {
+      transition: 0.3s ease;
+      text-decoration: underline;
+      color: blue;
+    }
+
+    #dabba_2 {
+      display: inline-block;
+      width: 100vh;
+      height: 100%;
+    }
+
+    .build {
+      width: 300px;
+      color: black;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2.7rem;
+      margin-top: 10%;
+      margin-left: 5%;
+    }
+
+    .dream {
+      color: #0a58b8;
+      position: absolute;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2.7rem;
+      width: 200px;
+      top: 19.1%;
+      left: 17.6%;
+    }
+
+    .site {
+      color: #0a58b8;
+      position: absolute;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2.7rem;
+      width: 200px;
+      top: 28%;
+      left: 2.5%;
+    }
+
+    .para {
+      color: #9d9a9a;
+      font-weight: 500;
+      margin-top: 12%;
+      font-size: 17px;
+      margin-left: 5%;
+    }
+
+    .neela {
+      position: absolute;
+      left: 65%;
+      border-radius: 20px;
+      top: 15%;
+      width: 24%;
+      height: 260px;
+      box-shadow: 0px 3px 5px #1c20e3;
+      background: linear-gradient(#211fe0, #b124db);
+    }
+
+    .btn1 {
+      margin-top: 4%;
+      margin-left: 5.2%;
+      width: 110px;
+      height: 40px;
+      border-radius: 8px;
+      border: none;
+      box-shadow: none;
+      background-color: #406bed;
+      color: white;
+      cursor: pointer;
+    }
+
+    .btn1:hover {
+      transition: 0.5s ease;
+      background-color: #b124db;
+      color: #eee;
+    }
+
+    .btn2 {
+      margin-top: 4%;
+      margin-left: 5.2%;
+      width: 110px;
+      height: 40px;
+      border: 2px solid #406bed;
+      border-radius: 8px;
+      color: #5a7fef;
+      cursor: pointer;
+    }
+
+    .btn2:hover {
+      transition: 1.2s ease;
+      border: 1.5px solid black;
+      color: #d12e32;
+    }
+
+    #dabba_3 {
+      display: inline-block;
+      width: 100%;
+      height: 70vh;
+    }
+
+    #our {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 2rem;
+      margin-top: 6.5%;
+      justify-self: center;
+    }
+
+    .batti {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.9rem;
+      margin-top: 0.5%;
+      color: #7e7d7d;
+      justify-self: center;
+    }
+
+    .dabii {
+      background-color: #eee;
+      position: absolute;
+      left: 19%;
+      top: 85%;
+      width: 18.6%;
+      height: 200px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .dabii:hover {
+      transition: 1s ease;
+      transform: translateY(-10px);
+      box-shadow: 0px 3px 5px #06060a;
+    }
+
+    .fast {
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      position: relative;
+      top: 20%;
+      left: 8%;
+      cursor: none;
+    }
+
+    .create_he {
+      color: #9d9a9a;
+      cursor: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      position: relative;
+      top: 12px;
+    }
+
+    .dabii_2 {
+      cursor: pointer;
+      background-color: #eee;
+      left: 40%;
+      top: 85%;
+      width: 18.6%;
+      height: 200px;
+      position: absolute;
+      border-radius: 12px;
+    }
+
+    .dabii_2:hover {
+      transition: 1s ease;
+      transform: translateY(-10px);
+      box-shadow: 0px 3px 5px #06060a;
+    }
+
+    .modern {
+      cursor: none;
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      position: relative;
+      top: 20%;
+      left: 8%;
+    }
+
+    .hena {
+      cursor: none;
+      color: #9d9a9a;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      position: relative;
+      top: 12px;
+    }
+
+    .dabii_3 {
+      cursor: pointer;
+      background-color: #eee;
+      position: absolute;
+      left: 61%;
+      top: 85%;
+      width: 18.6%;
+      height: 200px;
+      border-radius: 12px;
+    }
+
+    .dabii_3:hover {
+      transition: 1s ease;
+      transform: translateY(-10px);
+      box-shadow: 0px 3px 5px #06060a;
+    }
+
+    .responsive {
+      cursor: none;
+      font-size: 1.2rem;
+      font-family: Arial, Helvetica, sans-serif;
+      position: relative;
+      top: 20%;
+      left: 8%;
+    }
+
+    .ji {
+      cursor: none;
+      color: #9d9a9a;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.8rem;
+      position: relative;
+      top: 12px;
+      width: 220px;
+    }
+  </style>
+  <body>
+    <div>
+      <div id="Container"></div>
+
+      <div id="Container-2"></div>
+
+      <div id="Container-3"></div>
+    </div>
+
+    <script>
+      // Document se dabba liya upper ka
+      let a = document.getElementById("Container");
+
+      // apna ye naam waam vo sab
+      let b = document.createElement("h3");
+      b.setAttribute("class", "my");
+      b.innerHTML = "MyWebsite";
+      a.append(b);
+
+      // apna ye nav bar
+      let c = document.createElement("nav");
+      c.setAttribute("class", "links");
+      a.append(c);
+
+      // apni ye links
+      let a1 = document.createElement("a");
+      a1.innerHTML = "Home";
+      let a2 = document.createElement("a");
+      a2.innerHTML = "About";
+      let a3 = document.createElement("a");
+      a3.innerHTML = "Services";
+      let a4 = document.createElement("a");
+      a4.innerHTML = "Contact";
+      a1.setAttribute("href", "#");
+      a1.setAttribute("class", "a_s");
+      a2.setAttribute("href", "#");
+      a2.setAttribute("class", "a_s");
+      a3.setAttribute("href", "#our");
+      a3.setAttribute("class", "a_s");
+      a4.setAttribute("href", "#");
+      a4.setAttribute("class", "a_s");
+      c.append(a1);
+      c.append(a2);
+      c.append(a3);
+      c.append(a4);
+
+      // apna container 2 yha pe
+      let dabba_2 = document.getElementById("Container-2");
+      dabba_2.setAttribute("id", "dabba_2");
+
+      // Abhi aayega apna ye kya bolte build vagera
+      let build = document.createElement("h1");
+      build.innerHTML = "Build Your";
+      build.setAttribute("class", "build");
+
+      dabba_2.append(build);
+
+      // Neela dabba
+
+      let box = document.createElement("div");
+      box.setAttribute("class", "neela");
+
+      dabba_2.append(box);
+
+      // dream vagera
+      let dream = document.createElement("h1");
+      dream.innerHTML = "Dream";
+      dream.setAttribute("class", "dream");
+
+      dabba_2.append(dream);
+
+      let site = document.createElement("h1");
+      site.innerHTML = "Website";
+      site.setAttribute("class", "site");
+
+      dabba_2.append(site);
+
+      // Paragraph niche ka
+      let para = document.createElement("p");
+      para.innerHTML =
+        "Create beautiful, modern and responsive website using simple HTML and CSS.";
+      para.setAttribute("class", "para");
+
+      dabba_2.append(para);
+
+      // Button dono ke dono
+
+      let btn1 = document.createElement("button");
+      btn1.setAttribute("class", "btn1");
+      btn1.innerHTML = "Get Started";
+
+      dabba_2.append(btn1);
+
+      let btn2 = document.createElement("button");
+      btn2.setAttribute("class", "btn2");
+      btn2.innerHTML = "Learn More";
+
+      dabba_2.append(btn2);
+
+      // last section of box
+
+      let dabba_3 = document.getElementById("Container-3");
+      dabba_3.setAttribute("id", "dabba_3");
+
+      // Ab baaki ki heading
+
+      let our = document.createElement("h2");
+      our.setAttribute("id", "our");
+      our.innerText = "Our Services";
+
+      dabba_3.append(our);
+
+      // our ke niche ki line
+
+      let batti = document.createElement("p");
+      batti.setAttribute("class", "batti");
+      batti.innerHTML = "Everything you need to build a professional Website.";
+
+      dabba_3.appendChild(batti);
+
+      // pehla dabba niche ka
+      let pela_dabba = document.createElement("div");
+      pela_dabba.setAttribute("class", "dabii");
+      dabba_3.append(pela_dabba);
+      // pele dabbe ka saaman
+
+      let fast = document.createElement("h1");
+      fast.setAttribute("class", "fast");
+      fast.innerHTML = "Fast Design";
+
+      pela_dabba.append(fast);
+
+      let banana = document.createElement("p");
+      banana.setAttribute("class", "create_he");
+      banana.innerText = "Create fast and lightweight";
+      fast.append(banana);
+
+      // dusra issi ka dabba
+
+      let dusra_dabba = document.createElement("div");
+      dusra_dabba.setAttribute("class", "dabii_2");
+      dabba_3.append(dusra_dabba);
+
+      let modern = document.createElement("h1");
+      modern.setAttribute("class", "modern");
+      modern.innerHTML = "Modern UI";
+
+      dusra_dabba.append(modern);
+
+      let hena = document.createElement("p");
+      hena.setAttribute("class", "hena");
+      hena.innerText = "Create fast and lightweight";
+      modern.append(hena);
+
+      // issi ka safed teesra dabba
+
+      let hell_na = document.createElement("div");
+      hell_na.setAttribute("class", "dabii_3");
+      dabba_3.append(hell_na);
+
+      let response = document.createElement("h1");
+      response.setAttribute("class", "responsive");
+      response.innerHTML = "Responsive";
+
+      hell_na.append(response);
+
+      let tohar = document.createElement("p");
+      tohar.setAttribute("class", "ji");
+      tohar.innerText = "Your website will look great on every device";
+      response.append(tohar);
+    </script>
+  </body>
+</html>
