@@ -18,6 +18,16 @@
         padding: 0;
         overflow: hidden;
         box-sizing: border-box;
+        animation: 1s load ease-in-out;
+      }
+
+      @keyframes load {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
       }
 
       body {
@@ -33,7 +43,9 @@
       }
     </style>
   </head>
-  <body></body>
+  <body>
+    <div></div>
+  </body>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
