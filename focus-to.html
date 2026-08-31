@@ -10,15 +10,20 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
     />
 
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
       * {
         margin: 0;
         padding: 0;
-        overflow: hidden;
         box-sizing: border-box;
         animation: 1s load ease-in-out;
+        overflow-x: hidden;
       }
 
       @keyframes load {
@@ -62,7 +67,7 @@
         width: 45%;
         height: 15%;
         margin-top: 5%;
-        margin-left: 5%;
+        margin-left: 12%;
       }
 
       .logo {
@@ -101,19 +106,309 @@
 
       #date {
         color: #e1e3e7;
+        position: absolute;
+        left: 77%;
+        top: 15%;
       }
+
+      .container{
+        margin-left: 10%;
+        width: 100%;
+        height: 100vh;
+      }
+
+      .white{
+        width: 80%;
+        height: 90vh;
+        background-color: #e6e4e4;
+        border-radius: 20px;
+      }
+
+      #lelo{
+        margin-top: 2.5%;
+        margin-left: 1.5%;
+        width: 60%;
+        height: 10vh;
+        border-radius: 15px;
+        padding: 0 0 0 2.5rem;
+        border: none;
+        box-shadow: none;
+        outline: none;
+      }
+
+      #lelo::placeholder{
+        /* padding: 0 0 0 1.5rem; */
+        font-size: 16px;
+      }
+
+      #options-hai{
+        margin-left: 2px;
+        height: 10vh;
+        width: 13%;
+        border-radius: 15px;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        padding: 0 0 0 1rem;
+      }
+
+      #calander{
+        margin-left: 5px;
+        height: 10vh;
+        border-radius: 15px;
+        width: 12%;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        padding: 0 0 0 1rem;
+      }
+
+      #aan-do{
+        border-radius: 15px;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        position: sticky;
+        top: 50%;
+        background: linear-gradient(136deg, #735df5, #4874ec);
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #eee;
+        font-weight: bolder;
+        cursor: pointer;
+        margin-left: 8px;
+        height: 10vh;
+        width: 8%;
+      }
+
+      #aan-do:hover{
+        transition: 0.5s ease-in-out;
+        transform: translateY(-2px);
+      }
+
+      .total_task{
+        background-color: #ffffff;
+        height: 75px;
+        width: 22%;
+        margin-top: 2.5%;
+        margin-left: 1.5%;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      #task_count{
+        color: #000;
+        margin-top: 2%;
+        margin-left: 5%;
+        padding: 0;
+      }
+
+      .nu_task{
+        color: #797777;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* position: absolute; */
+        font-size: 12px;
+        margin-top: -6%;
+        margin-left: 3%;
+        font: bolder;
+      }
+
+      .active_task{
+        background-color: #ffffff;
+        height: 75px;
+        width: 22%;
+        margin-top: 2.5%;
+        margin-left: 1.5%;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .nu_active{
+        color: #797777;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* position: absolute; */
+        font-size: 12px;
+        margin-top: -6%;
+        margin-left: 3%;
+        font: bolder;
+      }
+
+      #active_count{
+        color: #000;
+        margin-top: 2%;
+        margin-left: 5%;
+        padding: 0;
+      }
+
+      .complete_task{
+        background-color: #ffffff;
+        height: 75px;
+        width: 22%;
+        margin-top: 2.5%;
+        margin-left: 1.5%;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .nu_complete{
+        color: #797777;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* position: absolute; */
+        font-size: 12px;
+        margin-top: -6%;
+        margin-left: 3%;
+        font: bolder;
+      }
+
+      #complete_count{
+        color: #000;
+        margin-top: 2%;
+        margin-left: 5%;
+        padding: 0;
+      }
+
+      .high_task{
+        background-color: #ffffff;
+        height: 75px;
+        width: 22%;
+        margin-top: 2.5%;
+        margin-left: 1.5%;
+        border-radius: 15px;
+        overflow: hidden;
+      }
+
+      .nu_high{
+        color: #797777;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        /* position: absolute; */
+        font-size: 12px;
+        margin-top: -6%;
+        margin-left: 3%;
+        font: bolder;
+      }
+
+      #high_count{
+        color: #000;
+        margin-top: 2%;
+        margin-left: 5%;
+        padding: 0;
+      }
+
+      #search{
+        height: 40px;
+        width: 75%;
+        border-radius: 15px;
+        padding: 0 0 0 1rem;
+        display: flex;
+        justify-content: space-between;
+        border: none;
+        box-shadow: none;
+        outline: none;
+      }
+
+      .rd3_bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .selection{
+        width: 100%;
+        margin-left: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .selection > button {
+        outline: none;
+        box-shadow: none;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 12px;
+        border-radius: 15px;
+        color: #596174;
+        padding: 9px 1.5px;
+        font-weight: bold;
+      }
+
+      #all:hover{
+        color: #554bea;
+      }
+
+      #active:hover{
+        color: #554bea;
+      }
+
+      #comp:hover{
+        color: #554bea;
+      }
+
+      #hi:hover{
+        color: #554bea;
+      }
+
     </style>
   </head>
   <body>
     <div>
-      <header>
+      <header class="animate__zoomInDown">
         <div class="brand">
           <div class="logo">✓</div>
           <h1 class="lo">Focus List</h1>
           <div class="subtitle">Plan Task. Do task. Done task</div>
+          <span id="date"></span>
         </div>
-        <span id="date"></span>
       </header>
+
+      <div class="container">
+      <div class="white">
+            <div class="task-area">
+                <input type="text" id="lelo" placeholder="What needs to be done?">
+                <select name="priority" id="options-hai">
+                  <option value="LOW">LOW PRIORITY</option>
+                  <option value="MEDIUM" selected>MEDIUM PRIORITY</option>
+                  <option value="HIGH">HIGH PRIORITY</option>
+                </select>
+                <input type="date" id="calander">
+                <button id="aan-do">+ ADD<br>TASK</button>
+            </div>
+            <div class="small-box" style="display: flex; flex-direction: row; width: 100%;">
+              <div class="total_task">
+                <h1 id="task_count">0</h1> <br>
+                <p class="nu_task">Total Tasks</p>
+              </div>
+              <div class="active_task">
+                <h1 id="active_count">0</h1> <br>
+                <p class="nu_active">Active</p>
+              </div>
+              <div class="complete_task">
+                <h1 id="complete_count">0</h1> <br>
+                <p class="nu_complete">Completed</p>
+              </div>
+              <div class="high_task">
+                <h1 id="high_count">0</h1> <br>
+                <p class="nu_high">High Priority</p>
+              </div>
+              </div>
+              <div class="rd3_bar" style="display: flex; flex-direction: row; width: 100%; margin-top: 3%; margin-left: 1.8%;">
+              <input id="search" placeholder="🔎 Search Tasks...">
+              <div class="selection">
+                <button onclick="" id="all">ALL</button>
+                <button onclick="" id="active">ACTIVE</button>
+                <button style="width: 18%;" onclick="" id="comp">COMPLETED</button>
+                <button style="width: 20%;" onclick="" id="hi">HIGH PRIORITY</button>
+              </div>
+            </div>
+            </div>
+      </div>
+      </div>
     </div>
 
     <script>
