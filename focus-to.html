@@ -122,6 +122,8 @@
         height: 90vh;
         background-color: #e6e4e4;
         border-radius: 20px;
+        display: flex;
+        flex-direction: column;
       }
 
       #lelo{
@@ -350,6 +352,10 @@
         color: #554bea;
       }
 
+      #hi{
+        overflow: hidden;
+      }
+
       #hi:hover{
         color: #554bea;
       }
@@ -369,6 +375,35 @@
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
 
+      .foot{
+        position: absolute;
+        bottom: -13.5%;
+        margin-left: 1%;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      #tasking{
+        color: #797777;
+        font-weight: bold;
+        width: 150px;
+      }
+
+      .bot_ke{
+        width: 100%;
+      }
+
+      .clear{
+        margin-left: 65%;
+        border: none;
+        background-color: #e6e4e4;
+        box-shadow: none;
+        outline: none;
+        color: red;
+        cursor: pointer;
+      }
+
     </style>
   </head>
   <body>
@@ -385,14 +420,14 @@
       <div class="container">
       <div class="white">
             <div class="task-area">
-                <input type="text" id="lelo" placeholder="What needs to be done?">
+                <input type="search" id="lelo" placeholder="What needs to be done?">
                 <select name="priority" id="options-hai">
                   <option value="LOW">LOW PRIORITY</option>
                   <option value="MEDIUM" selected>MEDIUM PRIORITY</option>
                   <option value="HIGH">HIGH PRIORITY</option>
                 </select>
                 <input type="date" id="calander">
-                <button id="aan-do">+ ADD<br>TASK</button>
+                <button id="aan-do" onclick="gettask()">+ ADD<br>TASK</button>
             </div>
             <div class="small-box" style="display: flex; flex-direction: row; width: 100%;">
               <div class="total_task">
@@ -421,6 +456,9 @@
                 <button style="width: 20%;" onclick="" id="hi">HIGH PRIORITY</button>
               </div>
             </div>
+
+            <div id="works"></div>
+
             <div id="paper_box">
               <center>
                 <h1 class="memo" style="font-size: 3rem;">📝</h1>
@@ -431,6 +469,16 @@
                 <h2 class="no">No Task Found</h2>
                 <p class="subs">Add a task or change your filter</p>
               </center>
+            </div>
+            <div class="last">
+              <footer class="foot">
+                <div class="last_section">
+                  <p id="tasking">0 active tasks</p>
+                </div>
+                <div class="bot_ke">
+                  <button class="clear" onclick="">Clear Completed</button>
+                  </div>
+              </footer>
             </div>
             </div>
       </div>
@@ -452,6 +500,15 @@
       const perfect_din = din[today.getDay()];
       document.getElementById("date").textContent =
         `${perfect_din}, ${formattedDate}`;
+
+        let work = document.getElementById("works");
+
+        let task = document.getElementById("lelo").innerText;
+
+        if (task === " ") {
+          alert("Please Enter A Task Can't Work Without It");
+          return 0;
+        }
     </script>
   </body>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
