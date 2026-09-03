@@ -4,18 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Focus-List</title>
-
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-    />
-
-    <link
+    <!-- <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+  /> -->
 
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
 
     <style>
       * {
@@ -111,13 +105,13 @@
         top: 15%;
       }
 
-      .container{
+      .container {
         margin-left: 10%;
         width: 100%;
         height: 100vh;
       }
 
-      .white{
+      .white {
         width: 80%;
         height: 90vh;
         background-color: #e6e4e4;
@@ -126,7 +120,7 @@
         flex-direction: column;
       }
 
-      #lelo{
+      #task {
         margin-top: 2.5%;
         margin-left: 1.5%;
         width: 60%;
@@ -138,12 +132,12 @@
         outline: none;
       }
 
-      #lelo::placeholder{
+      #task::placeholder {
         /* padding: 0 0 0 1.5rem; */
         font-size: 16px;
       }
 
-      #options-hai{
+      #options {
         margin-left: 2px;
         height: 10vh;
         width: 13%;
@@ -154,7 +148,7 @@
         padding: 0 0 0 1rem;
       }
 
-      #calander{
+      #calander {
         margin-left: 5px;
         height: 10vh;
         border-radius: 15px;
@@ -165,7 +159,7 @@
         padding: 0 0 0 1rem;
       }
 
-      #aan-do{
+      #add_task {
         border-radius: 15px;
         border: none;
         box-shadow: none;
@@ -173,7 +167,18 @@
         position: sticky;
         top: 50%;
         background: linear-gradient(136deg, #735df5, #4874ec);
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
         color: #eee;
         font-weight: bolder;
         cursor: pointer;
@@ -182,12 +187,12 @@
         width: 8%;
       }
 
-      #aan-do:hover{
+      #add_task:hover {
         transition: 0.5s ease-in-out;
         transform: translateY(-2px);
       }
 
-      .total_task{
+      .total_task {
         background-color: #ffffff;
         height: 75px;
         width: 22%;
@@ -197,17 +202,17 @@
         overflow: hidden;
       }
 
-      #task_count{
+      #task_count {
         color: #000;
         margin-top: 2%;
         margin-left: 5%;
         padding: 0;
       }
 
-      .nu_task{
+      .nu_task {
         color: #797777;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         /* position: absolute; */
         font-size: 12px;
         margin-top: -6%;
@@ -215,7 +220,7 @@
         font: bolder;
       }
 
-      .active_task{
+      .active_task {
         background-color: #ffffff;
         height: 75px;
         width: 22%;
@@ -225,10 +230,10 @@
         overflow: hidden;
       }
 
-      .nu_active{
+      .nu_active {
         color: #797777;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         /* position: absolute; */
         font-size: 12px;
         margin-top: -6%;
@@ -236,14 +241,14 @@
         font: bolder;
       }
 
-      #active_count{
+      #active_count {
         color: #000;
         margin-top: 2%;
         margin-left: 5%;
         padding: 0;
       }
 
-      .complete_task{
+      .complete_task {
         background-color: #ffffff;
         height: 75px;
         width: 22%;
@@ -253,10 +258,10 @@
         overflow: hidden;
       }
 
-      .nu_complete{
+      .nu_complete {
         color: #797777;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         /* position: absolute; */
         font-size: 12px;
         margin-top: -6%;
@@ -264,14 +269,14 @@
         font: bolder;
       }
 
-      #complete_count{
+      #complete_count {
         color: #000;
         margin-top: 2%;
         margin-left: 5%;
         padding: 0;
       }
 
-      .high_task{
+      .high_task {
         background-color: #ffffff;
         height: 75px;
         width: 22%;
@@ -281,10 +286,10 @@
         overflow: hidden;
       }
 
-      .nu_high{
+      .nu_high {
         color: #797777;
         padding: 0;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         /* position: absolute; */
         font-size: 12px;
         margin-top: -6%;
@@ -292,14 +297,14 @@
         font: bolder;
       }
 
-      #high_count{
+      #high_count {
         color: #000;
         margin-top: 2%;
         margin-left: 5%;
         padding: 0;
       }
 
-      #search{
+      #search {
         height: 40px;
         width: 75%;
         border-radius: 15px;
@@ -311,13 +316,13 @@
         outline: none;
       }
 
-      .rd3_bar{
+      .rd3_bar {
         display: flex;
         justify-content: space-between;
         align-items: center;
       }
 
-      .selection{
+      .selection {
         width: 100%;
         margin-left: 15%;
         height: 40px;
@@ -332,7 +337,18 @@
         border: none;
         cursor: pointer;
         width: 10%;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
         font-size: 12px;
         border-radius: 15px;
         color: #596174;
@@ -340,42 +356,64 @@
         font-weight: bold;
       }
 
-      #all:hover{
+      #all:hover {
         color: #554bea;
       }
 
-      #active:hover{
+      #active:hover {
         color: #554bea;
       }
 
-      #comp:hover{
+      #completed:hover {
         color: #554bea;
       }
 
-      #hi{
+      #high_priority {
         overflow: hidden;
       }
 
-      #hi:hover{
+      #high_priority:hover {
         color: #554bea;
       }
 
-      #paper_box{
+      #paper_box {
         margin-top: 5.5%;
       }
 
-      .no{
+      .no {
         color: #797777;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
         font-size: 18px;
       }
 
-      .subs{
+      .subs {
         color: #797777;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          Oxygen,
+          Ubuntu,
+          Cantarell,
+          "Open Sans",
+          "Helvetica Neue",
+          sans-serif;
       }
 
-      .foot{
+      .foot {
         position: absolute;
         bottom: -13.5%;
         margin-left: 1%;
@@ -384,17 +422,17 @@
         width: 100%;
       }
 
-      #tasking{
+      #tasking {
         color: #797777;
         font-weight: bold;
         width: 150px;
       }
 
-      .bot_ke{
+      .bot_ke {
         width: 100%;
       }
 
-      .clear{
+      .clear {
         margin-left: 65%;
         border: none;
         background-color: #e6e4e4;
@@ -404,6 +442,33 @@
         cursor: pointer;
       }
 
+      .task_list {
+        position: relative;
+        width: 96%;
+        height: 40vh;
+        margin-top: 4%;
+        margin-left: 1.5%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        /* border: 1px solid red; */
+        display: none;
+        visibility: hidden;
+      }
+
+      .paper_block {
+        /* border: 1px solid red; */
+        position: relative;
+        margin-top: 4%;
+        margin-left: 1.5%;
+        width: 96%;
+        height: 40vh;
+        /* display: none;
+        visibility: hidden; */
+      }
+
+      #active_task {
+        width: 100px;
+      }
     </style>
   </head>
   <body>
@@ -417,71 +482,101 @@
         </div>
       </header>
 
-      <div class="container">
-      <div class="white">
+      <div class="uni_white">
+        <div class="container">
+          <div class="white">
             <div class="task-area">
-                <input type="search" id="lelo" placeholder="What needs to be done?">
-                <select name="priority" id="options-hai">
-                  <option value="LOW">LOW PRIORITY</option>
-                  <option value="MEDIUM" selected>MEDIUM PRIORITY</option>
-                  <option value="HIGH">HIGH PRIORITY</option>
-                </select>
-                <input type="date" id="calander">
-                <button id="aan-do" onclick="gettask()">+ ADD<br>TASK</button>
+              <input
+                type="search"
+                id="task"
+                placeholder="What needs to be done?"
+              />
+              <select name="priority" id="options">
+                <option value="LOW">LOW PRIORITY</option>
+                <option value="MEDIUM" selected>MEDIUM PRIORITY</option>
+                <option value="HIGH">HIGH PRIORITY</option>
+              </select>
+              <input type="date" id="calander" />
+              <button id="add_task" onclick="task()">+ ADD<br />TASK</button>
             </div>
-            <div class="small-box" style="display: flex; flex-direction: row; width: 100%;">
+            <div
+              class="small-box"
+              style="display: flex; flex-direction: row; width: 100%"
+            >
               <div class="total_task">
-                <h1 id="task_count">0</h1> <br>
+                <h1 id="task_count">0</h1>
+                <br />
                 <p class="nu_task">Total Tasks</p>
               </div>
               <div class="active_task">
-                <h1 id="active_count">0</h1> <br>
+                <h1 id="active_count">0</h1>
+                <br />
                 <p class="nu_active">Active</p>
               </div>
               <div class="complete_task">
-                <h1 id="complete_count">0</h1> <br>
+                <h1 id="complete_count">0</h1>
+                <br />
                 <p class="nu_complete">Completed</p>
               </div>
               <div class="high_task">
-                <h1 id="high_count">0</h1> <br>
+                <h1 id="high_count">0</h1>
+                <br />
                 <p class="nu_high">High Priority</p>
               </div>
-              </div>
-              <div class="rd3_bar" style="display: flex; flex-direction: row; width: 100%; margin-top: 3%; margin-left: 1.8%;">
-              <input id="search" placeholder="🔎 Search Tasks...">
+            </div>
+            <div
+              class="rd3_bar"
+              style="
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                margin-top: 3%;
+                margin-left: 1.8%;
+              "
+            >
+              <input id="search" placeholder="🔎 Search Tasks..." />
               <div class="selection">
                 <button onclick="" id="all">ALL</button>
                 <button onclick="" id="active">ACTIVE</button>
-                <button style="width: 18%;" onclick="" id="comp">COMPLETED</button>
-                <button style="width: 20%;" onclick="" id="hi">HIGH PRIORITY</button>
+                <button style="width: 18%" onclick="" id="completed">
+                  COMPLETED
+                </button>
+                <button style="width: 20%" onclick="" id="high_priority">
+                  HIGH PRIORITY
+                </button>
               </div>
             </div>
 
-            <div id="works"></div>
+            <div class="task_list"></div>
 
-            <div id="paper_box">
-              <center>
-                <h1 class="memo" style="font-size: 3rem;">📝</h1>
-              </center>
+            <div class="paper_block">
+              <div id="paper">
+                <center>
+                  <h1 class="memo" style="font-size: 3rem; margin-top: 2%">
+                    📝
+                  </h1>
+                </center>
+              </div>
+              <div id="sub-text">
+                <center>
+                  <h2 class="no">No Task Found</h2>
+                  <p class="subs">Add a task or change your filter</p>
+                </center>
+              </div>
             </div>
-            <div id="niche-text">
-              <center>
-                <h2 class="no">No Task Found</h2>
-                <p class="subs">Add a task or change your filter</p>
-              </center>
-            </div>
+
             <div class="last">
               <footer class="foot">
                 <div class="last_section">
-                  <p id="tasking">0 active tasks</p>
+                  <p id="active_task">0 active tasks</p>
                 </div>
                 <div class="bot_ke">
                   <button class="clear" onclick="">Clear Completed</button>
-                  </div>
+                </div>
               </footer>
             </div>
-            </div>
-      </div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -501,18 +596,72 @@
       document.getElementById("date").textContent =
         `${perfect_din}, ${formattedDate}`;
 
-        let work = document.getElementById("works");
+      let arr = [];
 
-        let task = document.getElementById("lelo").innerText;
+      function task() {
+        // let tasks =[];
+        // total_task = "all";
+        let work = document.getElementById("task").value;
+        let priority = document.getElementById("options").value;
+        let date = document.getElementById("calander").value;
 
-        if (task === " ") {
-          alert("Please Enter A Task Can't Work Without It");
-          return 0;
+        if (work === "") {
+          alert("Please eneter a Task");
+          return 1;
+        } else {
+          // console.log(work);
+          // console.log(priority);
+          // console.log(date);
+
+          // Data Taking And Hiding No Task Found
+          let list = document.querySelector(".task_list");
+          let hide = document.querySelector(".paper_block");
+
+          list.style.display = "flex";
+          list.style.visibility = "visible";
+
+          hide.style.display = "none";
+          hide.style.visibility = "hidden";
+
+          // Data Showing In List Format
+
+          let obj = {
+            listing: work,
+            prior: priority,
+            samay: date,
+            complete: false,
+          };
+
+          arr.push(obj);
+
+          localStorage.setItem("task", JSON.stringify(arr));
+
+          let data = JSON.parse(localStorage.getItem("task"));
+          // list.append(li);
+
+          for (i = 0; i < arr.length; i++) {
+            document.querySelector(".task_list");
+
+            let ul = document.createElement("ul");
+            list.append(ul);
+
+            let li = document.createElement("li");
+            ul.append(li);
+            li.innerHTML = arr[i];
+            li.setAttribute("class", "li_list");
+            ul.setAttribute("class", "ul_list");
+          }
+
+          // Reseting Values After Task Entered
+          document.getElementById("task").value = "";
+          document.getElementById("options").value = "MEDIUM";
+          document.getElementById("calander").value = "";
         }
+      }
     </script>
   </body>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init();
-  </script>
+  </script> -->
 </html>
