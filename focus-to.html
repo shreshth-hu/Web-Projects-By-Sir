@@ -453,6 +453,7 @@
         /* border: 1px solid red; */
         display: none;
         visibility: hidden;
+        flex-direction: column;
       }
 
       .paper_block {
@@ -468,6 +469,17 @@
 
       #active_task {
         width: 100px;
+      }
+
+      .li_list {
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 15px;
+        margin-bottom: 10px;
+        list-style: none; /* Removes the bullet point */
+        display: flex;
+        justify-content: space-between;
+        overflow: hidden;
       }
     </style>
   </head>
@@ -571,7 +583,9 @@
                   <p id="active_task">0 active tasks</p>
                 </div>
                 <div class="bot_ke">
-                  <button class="clear" onclick="">Clear Completed</button>
+                  <button class="clear" onclick="clear()">
+                    Clear Completed
+                  </button>
                 </div>
               </footer>
             </div>
@@ -596,7 +610,7 @@
       document.getElementById("date").textContent =
         `${perfect_din}, ${formattedDate}`;
 
-      let arr = [];
+      let arr = JSON.parse(localStorage.getItem("task")) || [];
 
       function task() {
         // let tasks =[];
@@ -639,17 +653,14 @@
           let data = JSON.parse(localStorage.getItem("task"));
           // list.append(li);
 
-          for (i = 0; i < arr.length; i++) {
-            document.querySelector(".task_list");
+          document.querySelector(".task_list").innerHTML = "";
 
-            let ul = document.createElement("ul");
-            list.append(ul);
-
+          for (let i = 0; i < arr.length; i++) {
             let li = document.createElement("li");
-            ul.append(li);
-            li.innerHTML = arr[i];
             li.setAttribute("class", "li_list");
-            ul.setAttribute("class", "ul_list");
+            list.append(li);
+            li.innerHTML =
+              arr[i].listing + " " + arr[i].prior + " " + arr[i].samay;
           }
 
           // Reseting Values After Task Entered
@@ -657,6 +668,16 @@
           document.getElementById("options").value = "MEDIUM";
           document.getElementById("calander").value = "";
         }
+      }
+
+      function clear() {
+        arr.push(obj);
+
+        let clear = document.getElementsByClassName("clear");
+
+        addEventListener("click", function () {
+          arr.length = 0;
+        });
       }
     </script>
   </body>
