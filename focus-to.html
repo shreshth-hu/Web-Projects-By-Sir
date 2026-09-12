@@ -655,6 +655,7 @@
                 type="search"
                 id="search"
                 placeholder="🔎 Search Tasks..."
+                onchange="target(event)"
               />
 
               <div class="selection">
@@ -694,6 +695,16 @@
                   <p class="subs">Add a task or change your filter</p>
                 </center>
               </div>
+            </div>
+
+            <div class="nothing" style="display: none">
+              <center>
+                <h1
+                  style="color: black; position: absolute; top: 85%; left: 35%"
+                >
+                  Nothing Here To Display
+                </h1>
+              </center>
             </div>
 
             <div class="last">
@@ -1002,6 +1013,33 @@
       }
 
       clearing();
+
+      function target(event) {
+        nikalo_all();
+        document.getElementById("search");
+        showlist();
+      }
+
+      function showlist() {
+        let count = 0;
+        let value = document.getElementById("search").value.toLowerCase();
+        let show = document.querySelectorAll(".li_container");
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].listing.toLowerCase().includes(value)) {
+            show[i].style.display = "flex";
+            count++;
+          } else {
+            show[i].style.display = "none";
+          }
+        }
+        if (count === 0) {
+          alert("Nothing to search");
+          document.querySelector(".nothing").style.display = "flex";
+          if (value === "") {
+            document.querySelector(".nothing").style.display = "none";
+          }
+        }
+      }
     </script>
   </body>
   <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
