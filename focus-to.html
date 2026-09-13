@@ -468,7 +468,7 @@
       }
 
       #active_task {
-        width: 100px;
+        width: 14px;
       }
 
       .ul_list {
@@ -709,11 +709,12 @@
 
             <div class="last">
               <footer class="foot">
-                <div class="last_section">
-                  <p id="active_task">0 active tasks</p>
-                </div>
-
-                <div class="bot_ke">
+                <div
+                  class="last_section"
+                  style="width: 100%; display: flex; flex-direction: row"
+                >
+                  <p id="active_task">0</p>
+                  <p>active tasks</p>
                   <button class="clear" onclick="">Clear</button>
                 </div>
               </footer>
@@ -765,6 +766,7 @@
       function jamatask() {
         localStorage.setItem("task", JSON.stringify(arr));
         counting();
+        nikalo_all();
       }
 
       let high = 0,
