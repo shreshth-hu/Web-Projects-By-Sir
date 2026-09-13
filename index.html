@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Damn Projects</title>
   </head>
   <style>
     * {
@@ -27,6 +27,7 @@
         "Helvetica Neue",
         sans-serif;
       color: #fff;
+      background: #000;
     }
     .preloader {
       width: 100%;
@@ -65,6 +66,7 @@
         transform: translateY(-20px);
       }
     }
+    
   </style>
   <body>
     <div>
@@ -73,6 +75,22 @@
           <h2 class="welcome">Welcome to Project Mania</h2>
         </div>
       </div>
+      <!-- Ab aayega apna kon saara saamaan -->
+      <div class="container_all">
+        <div class="contents">
+          <div class="box1"></div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
+
+<script>
+  addEventListener("load", function () {
+    setTimeout(function () {
+      let loading = document.querySelector(".preloader");
+      loading.style.opacity = "0";
+      loading.style.visibility = "hidden";
+    }, 4250);
+  });
+</script>
