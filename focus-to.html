@@ -767,11 +767,15 @@
         localStorage.setItem("task", JSON.stringify(arr));
         counting();
         nikalo_all();
+        bdlna();
       }
+
+      function bdlna() {}
 
       let high = 0,
         active = 0,
         completed = 0,
+        task_end,
         total = 0;
 
       function counting() {
@@ -800,6 +804,7 @@
           }
         }
         document.getElementById("active_count").innerHTML = active;
+        document.getElementById("active_task").innerHTML = active;
       }
 
       // Add task wale button se bas data liya hai //
@@ -978,6 +983,7 @@
             ul.append(div);
 
             counting();
+            bdlna();
           }
         } else {
           taskList.style.display = "none";
