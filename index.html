@@ -30,6 +30,7 @@
       background: #000;
     }
     .preloader {
+      z-index: -999;
       width: 100%;
       height: 100vh;
       display: flex;
@@ -66,7 +67,25 @@
         transform: translateY(-20px);
       }
     }
-    
+    .container_all {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+    .contents {
+      display: flex;
+      justify-content: space-between;
+      height: 100vh;
+      width: 100%;
+      z-index: -998;
+    }
+    .box1 {
+      height: 33vh;
+      width: 85%;
+      background-color: #ffff;
+      border-radius: 18px;
+    }
   </style>
   <body>
     <div>
@@ -89,7 +108,7 @@
   addEventListener("load", function () {
     setTimeout(function () {
       let loading = document.querySelector(".preloader");
-      loading.style.opacity = "0";
+      loading.style.display = "none";
       loading.style.visibility = "hidden";
     }, 4250);
   });
