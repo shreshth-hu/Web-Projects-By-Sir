@@ -715,7 +715,7 @@
                 >
                   <p id="active_task">0</p>
                   <p>active tasks</p>
-                  <button class="clear" onclick="">Clear</button>
+                  <button class="clear" id="clear_btn">Clear</button>
                 </div>
               </footer>
             </div>
@@ -766,11 +766,73 @@
       function jamatask() {
         localStorage.setItem("task", JSON.stringify(arr));
         counting();
-        nikalo_all();
-        bdlna();
+        show_all();
       }
 
-      function bdlna() {}
+      // Function to show krega saare
+      function show_all() {
+        let dikhao = document.querySelectorAll(".li_container");
+        for (let i = 0; i < arr.length; i++) {
+          if (dikhao[i]) {
+            dikhao[i].style.display = "flex";
+            document.querySelector(".nothing").style.display = "none";
+          }
+        }
+
+        if (arr.length === 0) {
+          taskList.style.display = "none";
+          paperBlock.style.display = "block";
+          taskList.style.visibility = "hidden";
+          paperBlock.style.visibility = "visible";
+        } else {
+          taskList.style.display = "flex";
+          paperBlock.style.display = "none";
+          taskList.style.visibility = "visible";
+          paperBlock.style.visibility = "hidden";
+        }
+      }
+
+      // Function to show active wale apne khali //
+      function show_active() {
+        let active_dekh = document.querySelectorAll(".li_container");
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].complete === false) {
+            active_dekh[i].style.display = "flex";
+            document.querySelector(".nothing").style.display = "none";
+          } else {
+            active_dekh[i].style.display = "none";
+            document.querySelector(".nothing").style.display = "flex";
+          }
+        }
+      }
+
+      // Function to show apna kaam khhtm bole toh compeleted //
+      function show_complete() {
+        let complete_wale = document.querySelectorAll(".li_container");
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].complete === true) {
+            complete_wale[i].style.display = "flex";
+            document.querySelector(".nothing").style.display = "none";
+          } else {
+            complete_wale[i].style.display = "none";
+            document.querySelector(".nothing").style.display = "flex";
+          }
+        }
+      }
+
+      // Function to show only HIGH PRIORITY wale log
+      function show_high() {
+        let high_dekh = document.querySelectorAll(".li_container");
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i].prior === "HIGH") {
+            high_dekh[i].style.display = "flex";
+            document.querySelector(".nothing").style.display = "none";
+          } else {
+            high_dekh[i].style.display = "none";
+            document.querySelector(".nothing").style.display = "flex";
+          }
+        }
+      }
 
       let high = 0,
         active = 0,
@@ -983,7 +1045,7 @@
             ul.append(div);
 
             counting();
-            bdlna();
+            show_all();
           }
         } else {
           taskList.style.display = "none";
