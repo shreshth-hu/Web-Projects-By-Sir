@@ -8,12 +8,12 @@
   <style>
     * {
       padding: 0;
+      margin: 0;
       box-sizing: border-box;
     }
     body {
-      margin: 0;
-      height: 0;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
       font-family:
         system-ui,
         -apple-system,
@@ -30,18 +30,22 @@
       background: #000;
     }
     .preloader {
-      z-index: -999;
+      position: fixed;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: 999;
       width: 100%;
       height: 100vh;
       display: flex;
-      background: linear-gradient(to right, #d8d7d7, #000);
-      background-size: 200%;
-      animation: loop_start 5.2s linear infinite;
+      background: linear-gradient(to right, #000, #d8d7d7, #000);
+      background-size: 95%;
+      animation: loop_start 5.2s ease infinite;
     }
 
     @keyframes loop_start {
       to {
-        background-position: 250%;
+        background-position: 200%;
       }
     }
     .loader {
@@ -51,7 +55,9 @@
 
     .welcome {
       display: flex;
+      color: #dc4d23;
       justify-content: center;
+      font-weight: bolder;
       font-size: 2.3rem;
       margin-top: 23.5%;
       position: relative;
@@ -68,26 +74,43 @@
       }
     }
     .container_all {
-      height: 100vh;
       width: 100%;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
+      padding: 40px 0;
     }
     .contents {
       display: flex;
-      justify-content: space-between;
-      height: 100vh;
+      flex-direction: column;
+      gap: 24px;
       width: 100%;
-      z-index: -998;
+      align-items: center;
     }
-    .box1 {
+
+    /* Reusable Box Class */
+    .box {
       height: 33vh;
       width: 85%;
-      background-color: #ffff;
       border-radius: 18px;
-      margin-left: 4.5%;
-      margin-top: 4%;
-      background: linear-gradient(to right, );
+      cursor: pointer;
+      background: linear-gradient(to right, #00ffff, #ff00ff, #00ffff);
+      background-size: 85%;
+      animation: boxing 3s ease infinite;
+      transition: 0.4s cubic-bezier(0.6, 0.01, 0.24, 0.99);
+    }
+
+    @keyframes boxing {
+      to {
+        background-position: 200%;
+      }
+    }
+
+    .box:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 10px 30px 4px rgba(0, 255, 255, 0.3),
+        0 20px 60px 4px rgba(255, 0, 255, 0.2);
+      padding: 30px 12rem 30px 10rem;
     }
   </style>
   <body>
@@ -97,10 +120,13 @@
           <h2 class="welcome">Welcome to Project Mania</h2>
         </div>
       </div>
-      <!-- Ab aayega apna kon saara saamaan -->
+
+      <!-- Content Section -->
       <div class="container_all">
         <div class="contents">
-          <div class="box1"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
         </div>
       </div>
     </div>
