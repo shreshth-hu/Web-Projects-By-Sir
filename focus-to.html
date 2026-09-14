@@ -775,7 +775,6 @@
         for (let i = 0; i < arr.length; i++) {
           if (dikhao[i]) {
             dikhao[i].style.display = "flex";
-            document.querySelector(".nothing").style.display = "none";
           }
         }
 
@@ -795,42 +794,65 @@
       // Function to show active wale apne khali //
       function show_active() {
         let active_dekh = document.querySelectorAll(".li_container");
+        let ginti = 0;
         for (let i = 0; i < arr.length; i++) {
-          if (arr[i].complete === false) {
-            active_dekh[i].style.display = "flex";
-            document.querySelector(".nothing").style.display = "none";
-          } else {
-            active_dekh[i].style.display = "none";
-            document.querySelector(".nothing").style.display = "flex";
+          if (active_dekh[i]) {
+            if (arr[i].complete === false) {
+              active_dekh[i].style.display = "flex";
+              ginti++;
+            } else {
+              active_dekh[i].style.display = "none";
+            }
           }
         }
+        krlecount(ginti);
       }
 
       // Function to show apna kaam khhtm bole toh compeleted //
       function show_complete() {
         let complete_wale = document.querySelectorAll(".li_container");
+        let ginti = 0;
         for (let i = 0; i < arr.length; i++) {
-          if (arr[i].complete === true) {
-            complete_wale[i].style.display = "flex";
-            document.querySelector(".nothing").style.display = "none";
-          } else {
-            complete_wale[i].style.display = "none";
-            document.querySelector(".nothing").style.display = "flex";
+          if (complete_wale[i]) {
+            if (arr[i].complete === true) {
+              complete_wale[i].style.display = "flex";
+              ginti++;
+            } else {
+              complete_wale[i].style.display = "none";
+            }
           }
         }
+        krlecount(ginti);
       }
 
       // Function to show only HIGH PRIORITY wale log
       function show_high() {
         let high_dekh = document.querySelectorAll(".li_container");
+        let ginti = 0;
         for (let i = 0; i < arr.length; i++) {
-          if (arr[i].prior === "HIGH") {
-            high_dekh[i].style.display = "flex";
-            document.querySelector(".nothing").style.display = "none";
-          } else {
-            high_dekh[i].style.display = "none";
-            document.querySelector(".nothing").style.display = "flex";
+          if (high_dekh[i]) {
+            if (arr[i].prior === "HIGH") {
+              high_dekh[i].style.display = "flex";
+              ginti++;
+            } else {
+              high_dekh[i].style.display = "none";
+            }
           }
+        }
+        krlecount(ginti);
+      }
+
+      function krlecount(ginti) {
+        if (ginti === 0) {
+          taskList.style.display = "none";
+          paperBlock.style.display = "block";
+          taskList.style.visibility = "hidden";
+          paperBlock.style.visibility = "visible";
+        } else {
+          taskList.style.display = "flex";
+          paperBlock.style.display = "none";
+          taskList.style.visibility = "visible";
+          paperBlock.style.visibility = "hidden";
         }
       }
 
@@ -1045,7 +1067,6 @@
             ul.append(div);
 
             counting();
-            show_all();
           }
         } else {
           taskList.style.display = "none";
