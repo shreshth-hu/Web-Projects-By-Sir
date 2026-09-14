@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Damn Projects</title>
-  </head>
-  <link
-    rel="shortcut icon"
-    href="./imgs/logo's/Logo Damn.jpg"
+    <link rel="shortcut icon" href="./imgs/logo's/Logo Damn.jpg" />
     type="image/x-icon"
-  />
+  </head>
   <style>
     * {
       padding: 0;
@@ -284,33 +281,32 @@
       </div>
       <p class="footer-container">Inspired By Mohit Sir</p>
     </div>
+    <script>
+      addEventListener("load", function () {
+        setTimeout(function () {
+          let loading = document.querySelector(".preloader");
+          loading.style.display = "none";
+          loading.style.visibility = "hidden";
+        }, 4250);
+      });
+
+      let mania = document.querySelector(".ani_txt");
+      const msg = ["Mania", "Planet", "Area", "World"];
+      let apne_ye_msg = 0;
+      function msg_bdlu() {
+        mania.innerHTML = msg[apne_ye_msg];
+        apne_ye_msg = (apne_ye_msg + 1) % msg.length;
+      }
+      msg_bdlu();
+      setInterval(msg_bdlu, 2200);
+
+      function project1() {
+        window.location.href = "website-using-js.html";
+      }
+
+      function project2() {
+        window.location.href = "focus-to.html";
+      }
+    </script>
   </body>
 </html>
-
-<script>
-  addEventListener("load", function () {
-    setTimeout(function () {
-      let loading = document.querySelector(".preloader");
-      loading.style.display = "none";
-      loading.style.visibility = "hidden";
-    }, 4250);
-  });
-
-  let mania = document.querySelector(".ani_txt");
-  const msg = ["Mania", "Planet", "Area", "World"];
-  let apne_ye_msg = 0;
-  function msg_bdlu() {
-    mania.innerHTML = msg[apne_ye_msg];
-    apne_ye_msg = (apne_ye_msg + 1) % msg.length;
-  }
-  msg_bdlu();
-  setInterval(msg_bdlu, 2200);
-
-  function project1() {
-    window.location.href = "website-using-js.html";
-  }
-
-  function project2() {
-    window.location.href = "focus-to.html";
-  }
-</script>
